@@ -186,3 +186,6 @@ def filter_rows_with_table(df, col1, col2, target_table):
             axis=1
         )
     ]
+
+# As an example 
+# filter_rows_with_table(master_data, 'upstreamTables', 'customSQLTables', 'dim_date')
