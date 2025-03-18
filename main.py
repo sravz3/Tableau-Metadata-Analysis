@@ -181,8 +181,8 @@ def filter_rows_with_table(df, col1, col2, target_table):
     return df[
         df.apply(
             lambda row: 
-                (isinstance(row[col1], list) and target_table in row[col1]) or
-                (isinstance(row[col2], list) and target_table in row[col2]),
+                (isinstance(row[col1], list) and any(target_table in item for item in row[col1])) or
+                (isinstance(row[col2], list) and any(target_table in item for item in row[col2])),
             axis=1
         )
     ]
